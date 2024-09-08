@@ -2,7 +2,9 @@
 
 html,
 body {
-	background: linear-gradient(45deg, #aeeeee, #7db9e8, #b0e2ff, #e0ffff);
+	background: #ff7e5f;
+	background: -webkit-linear-gradient(to right, #ff7e5f, #feb47b);
+	background: linear-gradient(to right, #ff7e5f, #feb47b);
 
 	overflow-x: hidden;
 	scroll-behavior: smooth;
@@ -24,8 +26,8 @@ body {
 
 
 .skill-progress {
-	width: 120px;
-	height: 120px;
+	width: 150px;
+	height: 150px;
 	background: none;
 	position: relative;
 	margin: 0 auto;
@@ -624,21 +626,44 @@ Services
  ABOUT Section 
  ------------------------------------ */
 
-
+/* About Section */
 .about {
 	background-image: url('../img/img.jpg');
 	background-size: cover;
 	background-position: center;
-	height: 90vh;
+	min-height: 90vh;
+	/* Use min-height to allow flexibility */
 	margin-top: -80px;
 	position: relative;
 	padding: 20px;
-
+	overflow: hidden;
+	/* Prevent content overflow */
 }
 
 
+
+
+/* About Image */
+.about-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 150px;
+	/* Add margin to position image */
+}
+
+.about-image img {
+	animation: upDown 5s linear infinite;
+	max-width: 100%;
+	/* Ensure image does not exceed its container width */
+	height: auto;
+	/* Maintain aspect ratio */
+	border-radius: 8px;
+}
+
+
+
 .about-text {
-	margin-top: 160px;
 	color: #ffffff;
 }
 
@@ -649,10 +674,6 @@ Services
 	margin-top: 30px;
 }
 
-
-.text-me {
-	margin-top: 30px;
-}
 
 
 
@@ -686,6 +707,11 @@ Services
 
 }
 
+
+.text-me {
+	margin-top: 250px;
+
+}
 
 .title {
 	font-family: 'Arial', sans-serif;
@@ -772,15 +798,7 @@ Services
 }
 
 
-.about-image img {
-	animation: upDown 5s linear infinite;
-	width: 90%;
-	/* Full width of container */
-	height: auto;
-	border-radius: 8px;
-	margin-top: 35px;
-	/* Space above the image */
-}
+
 
 @keyframes upDown {
 
@@ -821,23 +839,73 @@ Services
 
 
 
+
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 576px) {
+	.navbar {
+		margin: 30px 30px 0px 30px !important;
+
+		/* Adjust margin for very small screens */
+	}
+
+	.about-image {
+
+		margin-top: 50px !important;
+		/* Add margin to position image */
+	}
+
+
+	.text-me {
+		margin-top: 150px;
+
+	}
+
+}
+
+
 /* -----------------------------
 navbar 
 --------------------------------- */
 
 
 
+--------------------------------- */
 
+/* Default Navbar */
 #navbar {
 	padding: 0;
 	position: fixed;
-	top: 0;
+	margin: 30px 200px 200px 0px !important;
+	z-index: 1000;
 	height: 50px;
 	background-color: whitesmoke;
 	border-radius: 100px;
+	transition: all 0.3s ease;
+}
+
+/* Sticky Navbar Styles */
+.nav-sticky {
+
+	top: 0;
+
+	background: linear-gradient(45deg, #662d8c, #ed1e79);
+	/* Set the alpha to 0.2 for 20% transparency */
+	border-radius: 100px;
 	margin: 30px 200px 0px 200px;
 	transition: background-color 0.3s ease;
+	box-shadow: 0px 3px 10px 0px rgba(63, 58, 100, 0.08);
+	/* Transparent box shadow */
+
+	border-radius: 0px !important;
+	width: 100% !important;
+	height: 70px !important;
+	margin: 0px !important;
+	box-shadow: 0px 3px 10px 0px rgb(63 58 100 / 8%);
+	padding: 0;
 }
+
+
 
 .navbar-brand img {
 	width: 40px;
@@ -848,9 +916,7 @@ navbar
 	margin-left: auto;
 }
 
-.navbar-nav {
-	padding: 20px 0;
-}
+
 
 .navbar-brand {
 	margin-left: 20px;
@@ -876,16 +942,6 @@ navbar
 }
 
 
-.nav-sticky {
-	background: linear-gradient(45deg, #662d8c, #ed1e79) !important;
-
-	border-radius: 0px !important;
-	width: 100% !important;
-	height: 70px !important;
-	margin: 0px !important;
-	box-shadow: 0px 3px 10px 0px rgb(63 58 100 / 8%);
-	padding: 0;
-}
 
 
 /* Responsive adjustment */
@@ -1008,17 +1064,7 @@ Footer
 
 
 
-/* Extra small devices (phones, 600px and down) */
-@media (max-width: 576px) {
-	.navbar {
-		margin: 0px 0px 0px 0px !important
-	}
 
-	.text-me {
-		margin-top: 70px;
-	}
-
-}
 
 
 /* Responsive Styles */
@@ -1535,22 +1581,8 @@ Services
 	}
 
 
-	.about-text {
-		margin-top: 160px;
-		color: #ffffff;
-	}
-
-	.Skills {
-		font-family: 'Arial', sans-serif;
-		font-size: 24px;
-		font-style: italic !important;
-		margin-top: 30px;
-	}
 
 
-	.text-me {
-		margin-top: 30px;
-	}
 
 
 
@@ -1596,7 +1628,6 @@ Services
 
 	.about-paragraph {
 		max-width: 500px;
-		margin: 40px auto;
 		/* Center-align and space above and below the paragraph */
 		text-align: justify;
 		color: #ffffff;
@@ -1670,15 +1701,7 @@ Services
 	}
 
 
-	.about-image img {
-		animation: upDown 5s linear infinite;
-		width: 90%;
-		/* Full width of container */
-		height: auto;
-		border-radius: 8px;
-		margin-top: 35px;
-		/* Space above the image */
-	}
+
 
 	@keyframes upDown {
 
@@ -1726,10 +1749,16 @@ navbar
 
 
 
-	#navbar {
-		padding: 0;
+
+
+
+	.navbar {
 		position: sticky;
+		/* Ensures the navbar sticks to the top */
 		top: 0;
+		/* Aligns the navbar to the top */
+		z-index: 1000;
+		/* Ensures the navbar is above other content */
 		height: 50px;
 		background-color: whitesmoke;
 		border-radius: 100px;
@@ -1755,10 +1784,13 @@ navbar
 
 	}
 
+
 	.navbar-nav .nav-item {
 		margin: 0 10px;
 		/* Add space between nav items */
 	}
+
+
 
 	.navbar-nav .nav-link {
 		font-size: 16px;
@@ -1767,10 +1799,11 @@ navbar
 	}
 
 	.navbar-nav .nav-link:hover {
-		color: #fff;
-		background: linear-gradient(45deg, #ed1e781b, #662d8c0f);
+		color: #f00101;
+		background: linear-gradient(45deg, #f3066df4, #662d8c);
 		border-radius: 10px;
 		padding: 5px;
+
 	}
 
 
@@ -1906,14 +1939,7 @@ Footer
 
 
 
-	/* Extra small devices (phones, 600px and down) */
-	@media (max-width: 576px) {
-		.navbar {
-			margin: 20px 20px 0px 0px !important
-				/* Adjust margin for very small screens */
-		}
 
-	}
 
 
 	/* Responsive Styles */
