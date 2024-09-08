@@ -872,17 +872,18 @@ navbar
 
 
 
-/* Default Navbar */
+/* Default Navbar 
+
 #navbar {
 	padding: 0;
 	position: fixed;
-	margin: 30px 200px 200px 0px !important;
+	margin: 30px 200px 20px 0px !important;
 	z-index: 1000;
 	height: 50px;
 	background-color: whitesmoke;
 	border-radius: 100px;
 	transition: all 0.3s ease;
-}
+}  */
 
 /* Sticky Navbar Styles */
 .nav-sticky {
