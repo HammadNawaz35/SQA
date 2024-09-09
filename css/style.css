@@ -880,6 +880,7 @@ navbar
 	z-index: 1000;
 	height: 50px;
 	background-color: whitesmoke;
+     margin: 30px 200px 0px 200px !important;
 	border-radius: 100px;
 	transition: all 0.3s ease;
 }  
